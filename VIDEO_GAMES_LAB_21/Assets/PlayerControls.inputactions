@@ -46,7 +46,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "ZQSD",
+                    "name": "WASD",
                     "id": "a4cb9626-20ac-4dca-8e18-1afeb07f533f",
                     "path": "2DVector",
                     "interactions": "",
@@ -81,7 +81,7 @@
                 {
                     "name": "left",
                     "id": "bcb7ad18-a92e-4ef4-a242-8aa63e0b547a",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -92,7 +92,7 @@
                 {
                     "name": "right",
                     "id": "8552e627-2476-4aff-aa23-f7abb2ce3496",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
