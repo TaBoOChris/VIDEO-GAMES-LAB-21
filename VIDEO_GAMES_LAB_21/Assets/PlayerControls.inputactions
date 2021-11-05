@@ -20,6 +20,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "QuickAttack",
+                    "type": "Button",
+                    "id": "1f196254-aa49-4430-ac2c-3f8e985f1a06",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "HeavyAttack",
+                    "type": "Button",
+                    "id": "5953e31c-51c1-4b89-b1f8-9f5bc13f6c47",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -46,7 +62,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "WASD",
+                    "name": "Arrows",
                     "id": "a4cb9626-20ac-4dca-8e18-1afeb07f533f",
                     "path": "2DVector",
                     "interactions": "",
@@ -59,7 +75,7 @@
                 {
                     "name": "up",
                     "id": "f34a0230-7831-47c5-8281-6d11f863edc5",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -70,7 +86,7 @@
                 {
                     "name": "down",
                     "id": "8a20d433-7e8c-4631-9cc0-427db43d56e7",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -81,7 +97,7 @@
                 {
                     "name": "left",
                     "id": "bcb7ad18-a92e-4ef4-a242-8aa63e0b547a",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -92,7 +108,7 @@
                 {
                     "name": "right",
                     "id": "8552e627-2476-4aff-aa23-f7abb2ce3496",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -108,6 +124,50 @@
                     "processors": "",
                     "groups": "Controller",
                     "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2b4ebc17-504f-4c0f-8c3f-4c3ac7a44eb7",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "QuickAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e504149-8eba-40f0-9cb5-d3dbde34fc7f",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "QuickAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "37956803-1a0c-44ce-9d84-8d6ca4bb462e",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "HeavyAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8a039cb9-19a7-4db9-8d1c-9b2afa140ab5",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Controller",
+                    "action": "HeavyAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

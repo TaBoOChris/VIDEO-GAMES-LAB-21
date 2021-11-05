@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7762792720926827806}
   - component: {fileID: 7762792720926827805}
   - component: {fileID: 7762792720926827808}
+  - component: {fileID: 2100046736463158334}
   - component: {fileID: 7762792720926827804}
   - component: {fileID: 7762792720926827807}
   - component: {fileID: 399254115222183543}
@@ -92,6 +93,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b33d4d80-39bc-4cdd-81fe-1acd0d645f0f
     m_ActionName: StickFight/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2100046736463158334}
+        m_TargetAssemblyTypeName: PlayerCombat, Assembly-CSharp
+        m_MethodName: QuickAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1f196254-aa49-4430-ac2c-3f8e985f1a06
+    m_ActionName: StickFight/QuickAttack[/Keyboard/c,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5953e31c-51c1-4b89-b1f8-9f5bc13f6c47
+    m_ActionName: StickFight/HeavyAttack[/Keyboard/x,/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: StickFight
@@ -112,6 +133,19 @@ MonoBehaviour:
   playerSpeed: 2
   jumpHeight: 1
   gravityValue: -9.81
+  animator: {fileID: 399254115222183543}
+--- !u!114 &2100046736463158334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762792720926827803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030c3629da2f4f54cb2a68f84b5cb966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   animator: {fileID: 399254115222183543}
 --- !u!143 &7762792720926827804
 CharacterController:
