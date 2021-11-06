@@ -130,9 +130,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 368104c5ea6a9c8488490d65f2658793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 2
+  playerSpeed: 6
   jumpHeight: 1
   gravityValue: -9.81
+  canMove: 1
   animator: {fileID: 399254115222183543}
 --- !u!114 &2100046736463158334
 MonoBehaviour:
@@ -159,13 +160,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0.68
-  m_Radius: 0.24
+  m_Height: 0.89
+  m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: -0.2, z: 0}
+  m_Center: {x: 0.03, y: -0.05, z: 0}
 --- !u!212 &7762792720926827807
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -206,7 +207,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3858063850402955622, guid: 175e902ae1ba7ee41a64b9a4aa867a7a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9ee8fb8e1fac144681f8bc3f4ffe316, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
