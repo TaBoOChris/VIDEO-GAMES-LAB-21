@@ -5,14 +5,14 @@ using UnityEngine;
 public class idleBehaviour : StateMachineBehaviour
 {
 
-    PlayerController playerController;
+    PlayerMovement playerMovement;
     PlayerCombat playerCombat;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerController = animator.GetComponentInParent<PlayerController>();
-        playerController.canMove = true;
+        playerMovement = animator.GetComponentInParent<PlayerMovement>();
+        playerMovement.canMove = true;
 
         playerCombat = animator.GetComponentInParent<PlayerCombat>();
 
@@ -23,7 +23,7 @@ public class idleBehaviour : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if(playerCombat.isAttacking){
-            playerController.canMove = false;
+            playerMovement.canMove = false;
             playerCombat.animator.Play("Player_Attack 1");
         }
     }
