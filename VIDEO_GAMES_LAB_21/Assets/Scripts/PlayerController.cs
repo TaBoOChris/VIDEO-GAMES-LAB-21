@@ -19,7 +19,11 @@ public class PlayerController : MonoBehaviour
     private bool jumped = false;
 
 
+    public bool canMove = true;
+
+
     public Animator animator;
+
 
     private void Start()
     {
@@ -27,15 +31,25 @@ public class PlayerController : MonoBehaviour
     }
 
     public void onMove(InputAction.CallbackContext context){
-        movementInput = new Vector2(context.ReadValue<Vector2>().x , 0).normalized;
+
+            movementInput = new Vector2(context.ReadValue<Vector2>().x , 0).normalized;
+        
     }
 
     public void onJump(InputAction.CallbackContext context){
-        jumped = context.action.triggered;
+
+            jumped = context.action.triggered;
+        
     }
 
     void Update()
     {
+        if(!canMove){
+            controller.Move(Vector3.zero);
+            animator.SetFloat("Speed", 0 );
+            return;
+        }
+
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
