@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!canMove){
             controller.Move(Vector3.zero);
-            animator.SetFloat("Speed", 0 );
+            animator.SetFloat("Speed", 0f );
             return;
         }
 

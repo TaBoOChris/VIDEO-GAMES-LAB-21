@@ -10,12 +10,15 @@ public class PlayerCombat : MonoBehaviour
     public bool isAttacking = false;
     
     private void Awake(){
-        animator = GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     public void QuickAttack(InputAction.CallbackContext context){
         
-        if(context.performed && !isAttacking) { isAttacking = true; }
+        if(context.performed && !isAttacking) { 
+               
+            isAttacking = true; 
+        }
     }
 
 }
