@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 399254115222183543}
+  isAttacking: 0
 --- !u!143 &7762792720926827804
 CharacterController:
   m_ObjectHideFlags: 0
@@ -158,13 +159,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.33
-  m_Radius: 0.3
+  m_Height: 0.68
+  m_Radius: 0.24
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0.71, z: 0}
+  m_Center: {x: 0, y: -0.2, z: 0}
 --- !u!212 &7762792720926827807
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -205,9 +206,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f2ed27d6c1c3ccc48959bcca269d88f0, type: 3}
+  m_Sprite: {fileID: -3858063850402955622, guid: 175e902ae1ba7ee41a64b9a4aa867a7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.2, y: 0.2}
