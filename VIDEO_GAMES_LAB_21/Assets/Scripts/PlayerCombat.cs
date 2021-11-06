@@ -9,11 +9,20 @@ public class PlayerCombat : MonoBehaviour
 
     public Animator animator;
 
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
+
     public void QuickAttack(InputAction.CallbackContext context){
-        // play attack anim
-        animator.SetTrigger("QuickAttack");
-        // deteck enemies
-        // damage them 
+
+        if(Time.time >= nextAttackTime){
+            // play attack anim
+            animator.SetTrigger("QuickAttack");
+
+            nextAttackTime = Time.time + 1f/attackRate;
+            // deteck enemies
+            // damage them 
+
+        }
     }
 
 }
