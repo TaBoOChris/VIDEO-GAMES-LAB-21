@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     public void onJump(InputAction.CallbackContext context){
 
             jumped = context.action.triggered;
+            animator.SetBool("IsJumping", true);
         
     }
 
@@ -54,6 +55,8 @@ public class PlayerController : MonoBehaviour
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
+            animator.SetBool("IsJumping", false);
+
         }
 
         Vector3 move = new Vector3(movementInput.x, 0, 0);
