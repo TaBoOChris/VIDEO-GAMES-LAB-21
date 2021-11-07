@@ -182,6 +182,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 396651107}
     - target: {fileID: 2100046736463158334, guid: 349cf8ad1a4b4b341988033596dc3f3b, type: 3}
+      propertyPath: attackRange
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2100046736463158334, guid: 349cf8ad1a4b4b341988033596dc3f3b, type: 3}
       propertyPath: fightEffectManager
       value: 
       objectReference: {fileID: 230214927}
