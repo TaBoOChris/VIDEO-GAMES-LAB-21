@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public bool canMove = true;
     public bool isStunned = false;
-    private bool jumped = false;
+    private bool jumpedForMove = false;
     private bool groundedPlayer;
     private bool falling = false;
 
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
             
 
         }else{
-            controller.Move(move * runSpeed * Time.fixedDeltaTime,false,jumped);
+            controller.Move(move * runSpeed * Time.fixedDeltaTime,false,jumpedForMove);
             
 
             
@@ -49,12 +49,14 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+        jumpedForMove = false;
 
         // IsFalling
-        jumped = false;
-        if( GetComponent<Rigidbody2D>().velocity.y <= -0.01f){
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();        
+        if( rb.velocity.y <= -0.0001f ){
             falling = true;
         } 
+
     }   
 
 
@@ -69,7 +71,8 @@ public class PlayerMovement : MonoBehaviour
     public void onJump(InputAction.CallbackContext context){
 
         if(context.action.triggered && canMove){
-            jumped = true;
+
+            jumpedForMove = true;
             animator.SetBool("IsJumping", true);
             createDust();
 
