@@ -30,6 +30,14 @@ public class FightEffectManager : MonoBehaviour
     }
 
 
+    public void AddHurtEffect(GameObject playerHurt){
+        Material Material = playerHurt.GetComponent<SpriteRenderer>().material;
+        Material.SetInt("_isHurtBool",1);
+    }
+    public void RemoveHurtEffect(GameObject playerHurt){
+        Material Material = playerHurt.GetComponent<SpriteRenderer>().material;
+        Material.SetInt("_isHurtBool",0);
+    }
 
 
     

@@ -51,7 +51,6 @@ public class PlayerCombat : MonoBehaviour
     public void TakeDamage(float percent){
 
         percentage += percent;
-        // play hurt anim
     }
 
     public void Propulse( Vector3 DamageImpactPosition){
@@ -89,17 +88,18 @@ public class PlayerCombat : MonoBehaviour
 
 
     public void Stun(float duration){
-        Debug.Log("stun");
-        canAttack = false;
-        isHurt = true;              // will run the animation
-        GetComponent<PlayerMovement>().Stun();
 
-        CancelInvoke();
-        Invoke("StopStun", duration);
+        canAttack = false;          // avoid attack
+        isHurt = true;              // run the animation
+        fightEffectManager.AddHurtEffect(gameObject);
+        GetComponent<PlayerMovement>().Stun();  // disable movement
+
     }
 
     public void StopStun(){
         canAttack = true;
+        isHurt = false;   
+        fightEffectManager.RemoveHurtEffect(gameObject);
         GetComponent<PlayerMovement>().StopStun();
     }
 

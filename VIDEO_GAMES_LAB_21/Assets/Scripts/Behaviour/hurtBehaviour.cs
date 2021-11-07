@@ -22,7 +22,7 @@ public class hurtBehaviour : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         
-        playerCombat.isHurt = false;
+        playerCombat.StopStun();
         
     }
 
