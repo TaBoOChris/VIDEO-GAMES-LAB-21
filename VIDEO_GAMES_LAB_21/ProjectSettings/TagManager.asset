@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ground
+  - Obstacle
+  - BombPickup
+  - Enemy
+  - ExplosionFX
+  - Bullet
+  - HealthBar
   layers:
   - Default
   - TransparentFX
@@ -12,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - StonePieces
   - 
   - 
   - 
@@ -44,6 +51,9 @@ TagManager:
   - name: BackGround
     uniqueID: 3279864849
     locked: 0
-  - name: BattleScene
+  - name: Char
     uniqueID: 1807849531
+    locked: 0
+  - name: Wall
+    uniqueID: 1165349763
     locked: 0

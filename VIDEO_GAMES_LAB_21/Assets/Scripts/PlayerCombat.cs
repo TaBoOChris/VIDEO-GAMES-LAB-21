@@ -91,7 +91,7 @@ public class PlayerCombat : MonoBehaviour
     public void Stun(float duration){
         Debug.Log("stun");
         canAttack = false;
-        isHurt = true;
+        isHurt = true;              // will run the animation
         GetComponent<PlayerMovement>().Stun();
 
         CancelInvoke();

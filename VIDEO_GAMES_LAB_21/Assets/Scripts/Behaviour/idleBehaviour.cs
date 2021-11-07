@@ -29,7 +29,7 @@ public class idleBehaviour : StateMachineBehaviour
             playerCombat.animator.Play("Player_Attack 1");
         }
         if(playerCombat.isHurt){
-            playerCombat.isHurt = false;
+            
             playerCombat.animator.Play("Player_Hurt");
         }
 
