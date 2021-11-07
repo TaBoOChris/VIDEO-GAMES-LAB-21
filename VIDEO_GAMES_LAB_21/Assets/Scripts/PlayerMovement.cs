@@ -29,16 +29,13 @@ public class PlayerMovement : MonoBehaviour
 
             controller.Move(0, false, false);
             animator.SetFloat("Speed", 0f );
-            return;
+            
 
         }else{
             controller.Move(move * runSpeed * Time.fixedDeltaTime,false,jumped);
-            jumped = false;
+            
 
-            // IsFalling
-            if( GetComponent<Rigidbody2D>().velocity.y < -0.01f){
-                falling = true;
-            } 
+            
                 
             // speed for animation
             animator.SetFloat("Speed", Mathf.Abs( move) );
@@ -52,6 +49,12 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+
+        // IsFalling
+        jumped = false;
+        if( GetComponent<Rigidbody2D>().velocity.y <= -0.01f){
+            falling = true;
+        } 
     }   
 
 
@@ -65,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     // receive input for jump
     public void onJump(InputAction.CallbackContext context){
 
-        if(context.action.triggered){
+        if(context.action.triggered && canMove){
             jumped = true;
             animator.SetBool("IsJumping", true);
             createDust();
