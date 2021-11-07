@@ -14,6 +14,8 @@ public class PlayerCombat : MonoBehaviour
 
     public FightEffectManager fightEffectManager;
 
+    public AudioManager audioManager;
+
     public bool canAttack = true;
     public bool isHurt = false;
 
@@ -51,6 +53,7 @@ public class PlayerCombat : MonoBehaviour
     public void TakeDamage(float percent){
 
         percentage += percent;
+        
     }
 
     public void Propulse( Vector3 DamageImpactPosition){
@@ -69,7 +72,8 @@ public class PlayerCombat : MonoBehaviour
         foreach ( Collider2D enemy in hitEnemies){
             if(enemy.gameObject != gameObject){
 
-
+                audioManager.Play("punch");
+                
                 float damageImpact = 100.0f;
 
                 enemy.GetComponent<PlayerCombat>().TakeDamage(damageImpact * i);
