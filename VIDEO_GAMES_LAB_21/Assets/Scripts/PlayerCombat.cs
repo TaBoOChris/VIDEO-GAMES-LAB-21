@@ -12,12 +12,17 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask stickLayers;
 
+    public FightEffectManager fightEffectManager;
+
     public bool canAttack = true;
 
     //-------------------------------------------------------
     
     private void Awake(){
         animator = gameObject.GetComponent<Animator>();
+
+        // get MAterial
+
 
     }
 
@@ -70,8 +75,12 @@ public class PlayerCombat : MonoBehaviour
                 enemy.GetComponent<PlayerCombat>().TakeDamage(damageImpact * i);
                 enemy.GetComponent<PlayerCombat>().Stun(0.5f);
                 
-                if(i >= 3 )
+                if(i >= 3 ){
+
+                    fightEffectManager.AddImpactEffect();
                     enemy.GetComponent<PlayerCombat>().Propulse(attackPoint.position);
+                }
+
                
             }
         } 
@@ -91,5 +100,7 @@ public class PlayerCombat : MonoBehaviour
         canAttack = true;
         GetComponent<PlayerMovement>().StopStun();
     }
+
+
 
 }

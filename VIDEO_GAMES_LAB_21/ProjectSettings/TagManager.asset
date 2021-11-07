@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 3279864849
+    locked: 0
+  - name: BattleScene
+    uniqueID: 1807849531
+    locked: 0
