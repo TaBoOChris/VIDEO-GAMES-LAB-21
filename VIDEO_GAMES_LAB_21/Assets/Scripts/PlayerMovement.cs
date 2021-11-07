@@ -32,8 +32,10 @@ public class PlayerMovement : MonoBehaviour
 
         }else{
             controller.Move(move * runSpeed * Time.fixedDeltaTime,false,jumped);
-            animator.SetFloat("Speed", Mathf.Abs( move) );
+            jumped = false;
 
+
+            animator.SetFloat("Speed", Mathf.Abs( move) );
             if(Mathf.Abs(move)>0){
                 Debug.Log("createDust");
                 createDust();
@@ -53,15 +55,22 @@ public class PlayerMovement : MonoBehaviour
 
     public void onJump(InputAction.CallbackContext context){
 
-        jumped = context.action.triggered;
-        animator.SetBool("IsJumping", true);
-        createDust();
+        if(context.action.triggered){
+            jumped = true;
+            animator.SetBool("IsJumping", true);
+            createDust();
+
+        }
         
     }
 
 
     public void OnLand(){
-        animator.SetBool("IsJumping", false);
+        if(!jumped){
+
+            animator.SetBool("IsJumping", false);
+        }
+        
     }
 
 
