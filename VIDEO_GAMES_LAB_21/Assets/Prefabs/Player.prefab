@@ -4913,7 +4913,7 @@ GameObject:
   - component: {fileID: 3819945121739190616}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5013,8 +5013,8 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 5953e31c-51c1-4b89-b1f8-9f5bc13f6c47
     m_ActionName: StickFight/HeavyAttack[/Keyboard/x,/XInputControllerWindows/buttonNorth]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Controller
   m_DefaultActionMap: StickFight
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
