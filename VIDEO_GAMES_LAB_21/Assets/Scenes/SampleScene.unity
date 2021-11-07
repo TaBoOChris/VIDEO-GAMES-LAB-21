@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7762792720926827805, guid: 349cf8ad1a4b4b341988033596dc3f3b, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762792720926827805, guid: 349cf8ad1a4b4b341988033596dc3f3b, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7762792720926827806, guid: 349cf8ad1a4b4b341988033596dc3f3b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -415,6 +423,14 @@ PrefabInstance:
     - target: {fileID: 7762792720926827803, guid: 349cf8ad1a4b4b341988033596dc3f3b, type: 3}
       propertyPath: m_Name
       value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762792720926827805, guid: 349cf8ad1a4b4b341988033596dc3f3b, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762792720926827805, guid: 349cf8ad1a4b4b341988033596dc3f3b, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7762792720926827806, guid: 349cf8ad1a4b4b341988033596dc3f3b, type: 3}
       propertyPath: m_RootOrder

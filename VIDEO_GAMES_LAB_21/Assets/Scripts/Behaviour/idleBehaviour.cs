@@ -12,6 +12,8 @@ public class idleBehaviour : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         playerMovement = animator.GetComponentInParent<PlayerMovement>();
+        
+        
         playerMovement.canMove = true;
 
         playerCombat = animator.GetComponentInParent<PlayerCombat>();

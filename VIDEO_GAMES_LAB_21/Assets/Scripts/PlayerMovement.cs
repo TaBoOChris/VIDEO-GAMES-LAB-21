@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController2D controller;
     public bool canMove = true;
+    public bool isStunned = false;
 
     float move = 0.0f;
     float runSpeed = 40.0f;
@@ -31,10 +32,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate(){
 
-        if(!canMove){
+        if(!canMove || isStunned){
+
             controller.Move(0, false, false);
             animator.SetFloat("Speed", 0f );
             return;
+
         }else{
 
             controller.Move(move * runSpeed * Time.fixedDeltaTime,false,jumped);
@@ -61,5 +64,15 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnLand(){
         animator.SetBool("IsJumping", false);
+    }
+
+
+    public void Stun(){
+        isStunned = true;
+
+    }
+
+    public void StopStun(){
+        isStunned = false;
     }
 }

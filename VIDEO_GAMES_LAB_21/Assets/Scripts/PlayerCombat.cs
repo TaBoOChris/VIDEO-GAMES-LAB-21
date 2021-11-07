@@ -12,7 +12,7 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask stickLayers;
 
-
+    public bool canAttack = true;
 
     //-------------------------------------------------------
     
@@ -21,9 +21,9 @@ public class PlayerCombat : MonoBehaviour
 
     }
 
-    public void QuickAttack(InputAction.CallbackContext context){
+    public void QuickAttackInput(InputAction.CallbackContext context){
         
-        if(context.performed != true){
+        if(context.performed != true || !canAttack){
             return;
         }
 
@@ -45,7 +45,6 @@ public class PlayerCombat : MonoBehaviour
     public void TakeDamage(float percent){
 
         percentage += percent;
-        Debug.Log("current percent : " + percentage);
         // play hurt anim
     }
 
@@ -59,35 +58,38 @@ public class PlayerCombat : MonoBehaviour
 
 
 
-
-    public void QuickAttackOne(){
-        QuickAttack(1);
-    }
-    public void QuickAttackTwo(){
-        QuickAttack(2);
-    }
-    public void QuickAttackThree(){
-        QuickAttack(3);
-    }
-
     public void QuickAttack(int i){
-        Debug.Log("attack");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position,attackRange,stickLayers);
      
         foreach ( Collider2D enemy in hitEnemies){
             if(enemy.gameObject != gameObject){
 
-                Debug.Log("hit " + enemy.name);
 
-                float damageImpact = 20.0f;
+                float damageImpact = 100.0f;
 
                 enemy.GetComponent<PlayerCombat>().TakeDamage(damageImpact * i);
-
+                enemy.GetComponent<PlayerCombat>().Stun(0.5f);
+                
                 if(i >= 3 )
                     enemy.GetComponent<PlayerCombat>().Propulse(attackPoint.position);
                
             }
         } 
+    }
+
+
+    public void Stun(float duration){
+        Debug.Log("stun");
+        canAttack = false;
+        GetComponent<PlayerMovement>().Stun();
+
+        CancelInvoke();
+        Invoke("StopStun", duration);
+    }
+
+    public void StopStun(){
+        canAttack = true;
+        GetComponent<PlayerMovement>().StopStun();
     }
 
 }
