@@ -289,9 +289,9 @@ MonoBehaviour:
   stickLayers:
     serializedVersion: 2
     m_Bits: 64
-  StickMaterial: {fileID: 0}
-  BackGroundMaterial: {fileID: 0}
+  fightEffectManager: {fileID: 0}
   canAttack: 1
+  isHurt: 0
 --- !u!212 &7762792720926827807
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -397,5 +397,5 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.35, y: 1}
+  m_Size: {x: 0.35, y: 0.99}
   m_Direction: 0
