@@ -77,4 +77,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.23333333
+    functionName: QuickAttackThree
+    data: 
+    objectReferenceParameter: {fileID: 7762792720926827803, guid: 349cf8ad1a4b4b341988033596dc3f3b, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
