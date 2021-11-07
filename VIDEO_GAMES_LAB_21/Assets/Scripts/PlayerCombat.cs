@@ -15,6 +15,7 @@ public class PlayerCombat : MonoBehaviour
     public FightEffectManager fightEffectManager;
 
     public bool canAttack = true;
+    public bool isHurt = false;
 
     //-------------------------------------------------------
     
@@ -90,6 +91,7 @@ public class PlayerCombat : MonoBehaviour
     public void Stun(float duration){
         Debug.Log("stun");
         canAttack = false;
+        isHurt = true;
         GetComponent<PlayerMovement>().Stun();
 
         CancelInvoke();

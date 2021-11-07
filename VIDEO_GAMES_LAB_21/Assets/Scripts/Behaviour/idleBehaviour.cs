@@ -28,6 +28,11 @@ public class idleBehaviour : StateMachineBehaviour
             playerMovement.canMove = false;
             playerCombat.animator.Play("Player_Attack 1");
         }
+        if(playerCombat.isHurt){
+            playerCombat.isHurt = false;
+            playerCombat.animator.Play("Player_Hurt");
+        }
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
