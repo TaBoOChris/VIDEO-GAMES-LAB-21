@@ -9,26 +9,18 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController2D controller;
     public bool canMove = true;
     public bool isStunned = false;
-
-    float move = 0.0f;
-    float runSpeed = 40.0f;
-
     private bool jumped = false;
     private bool groundedPlayer;
 
+    float move = 0.0f;      // get controller axis
+    float runSpeed = 40.0f;
+
+
     public Animator animator;
+    public ParticleSystem dustPS;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     void FixedUpdate(){
 
@@ -39,9 +31,14 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         }else{
-
             controller.Move(move * runSpeed * Time.fixedDeltaTime,false,jumped);
             animator.SetFloat("Speed", Mathf.Abs( move) );
+
+            if(Mathf.Abs(move)>0){
+                Debug.Log("createDust");
+                createDust();
+                    
+            }
 
         }
     }   
@@ -58,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
         jumped = context.action.triggered;
         animator.SetBool("IsJumping", true);
+        createDust();
         
     }
 
@@ -74,5 +72,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void StopStun(){
         isStunned = false;
+    }
+
+
+    public void createDust(){
+        if(!dustPS.isPlaying){
+          dustPS.Play();
+        }   
     }
 }
