@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class FightEffectManager : MonoBehaviour
 {
+    // CAMERA SHAKE
+    public CameraShake cameraShake;
+    public float shakeDuration = 0.2f;
+    public float shakeMagnitude = 0.05f;
+
 
     public float flashTime = 0.1f;
     public GameObject player1;
@@ -33,6 +38,9 @@ public class FightEffectManager : MonoBehaviour
     public void AddHurtEffect(GameObject playerHurt){
         Material Material = playerHurt.GetComponent<SpriteRenderer>().material;
         Material.SetInt("_isHurtBool",1);
+
+        
+        StartCoroutine(cameraShake.Shake(shakeDuration, shakeMagnitude));
     }
     public void RemoveHurtEffect(GameObject playerHurt){
         Material Material = playerHurt.GetComponent<SpriteRenderer>().material;
@@ -42,6 +50,8 @@ public class FightEffectManager : MonoBehaviour
 
     
     public void AddImpactEffect(){
+        StartCoroutine(cameraShake.Shake(shakeDuration, shakeMagnitude));
+        
         SticksMaterial1.SetInt("_ImpactBool", 1);
         SticksMaterial2.SetInt("_ImpactBool", 1);
         BackGroundMaterial.SetInt("_ImpactBool", 1);

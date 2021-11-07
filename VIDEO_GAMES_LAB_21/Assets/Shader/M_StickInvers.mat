@@ -42,9 +42,12 @@ Material:
     m_Floats:
     - BOOLEAN_8C085815E4E44703AFDA2694034F7E1B: 0
     - BOOLEAN_CA2CCB78D7C944E682FBEDC142ACA2CF: 0
+    - Boolean_029c45e2042243cba4101aa8c0df0ca0: 0
     - _BOOLEAN_CA2CCB78D7C944E682FBEDC142ACA2CF: 0
     - _ImpactBool: 0
+    - _isHurtBool: 0
     m_Colors:
     - Color_1: {r: 1, g: 1, b: 1, a: 0}
+    - Color_2ecfd3f8773a4adf89afedbc764c5f5c: {r: 1, g: 0, b: 0, a: 0}
     - Color_9d03c12d4303467199a93f1464fddfa0: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
