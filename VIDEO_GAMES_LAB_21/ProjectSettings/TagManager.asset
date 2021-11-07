@@ -51,9 +51,9 @@ TagManager:
   - name: BackGround
     uniqueID: 3279864849
     locked: 0
-  - name: Char
-    uniqueID: 1807849531
-    locked: 0
   - name: Wall
     uniqueID: 1165349763
+    locked: 0
+  - name: Char
+    uniqueID: 1807849531
     locked: 0
