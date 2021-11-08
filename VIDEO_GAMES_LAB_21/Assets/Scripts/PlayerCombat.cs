@@ -72,9 +72,9 @@ public class PlayerCombat : MonoBehaviour
         }
 
         if(context.performed && !isFiring) { 
-               
+            
             isFiring = true;
-            Shoot();        
+            animator.Play("Player_fire");        
         }
     }
 
@@ -146,7 +146,7 @@ public class PlayerCombat : MonoBehaviour
 
 
     public void Shoot(){
-        animator.Play("Player_fire");
+        
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation).GetComponent<Bullet>();
         bullet.parent = gameObject;
     }

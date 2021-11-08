@@ -24,6 +24,8 @@ public class Bullet : MonoBehaviour
 
                 hitInfo.GetComponent<PlayerCombat>().TakeDamage(damageImpact);
                 hitInfo.GetComponent<PlayerCombat>().Stun(0.5f);
+
+                hitInfo.GetComponent<PlayerCombat>().Propulse(gameObject.transform.position);
             }
 
             Destroy(gameObject);

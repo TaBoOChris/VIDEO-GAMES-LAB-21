@@ -22,7 +22,7 @@ public class fireBehaviour : StateMachineBehaviour
         if(pc == null){
             Debug.Log("Pas d'acces à PC");
         }
-        else if(pc.isHeavyAttacking){
+        else if(pc.isFiring){
             pc.isFiring = false;
         }    
     }
