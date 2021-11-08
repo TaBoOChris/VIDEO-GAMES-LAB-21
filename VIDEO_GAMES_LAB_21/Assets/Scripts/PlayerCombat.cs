@@ -9,8 +9,12 @@ public class PlayerCombat : MonoBehaviour
     public float percentage = 0.0f;
     public bool isAttacking = false;
     public bool isHeavyAttacking = false;
+    public bool isFiring = false;
     
     public Transform attackPoint;
+
+    public Transform firePoint;
+    public GameObject bulletPrefab;
     public float attackRange = 0.5f;
     public LayerMask stickLayers;
 
@@ -57,6 +61,20 @@ public class PlayerCombat : MonoBehaviour
             isHeavyAttacking = true; 
 
             
+        }
+    }
+
+
+    public void FireAttackInput(InputAction.CallbackContext context){
+        
+        if(context.performed != true || !canAttack){
+            return;
+        }
+
+        if(context.performed && !isFiring) { 
+               
+            isFiring = true;
+            Shoot();        
         }
     }
 
@@ -126,6 +144,15 @@ public class PlayerCombat : MonoBehaviour
     }
 
 
+
+    public void Shoot(){
+        Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation).GetComponent<Bullet>();
+        bullet.parent = gameObject;
+    }
+
+
+
+    // ------------ STUN ------------------------ 
     public void Stun(float duration){
 
 
