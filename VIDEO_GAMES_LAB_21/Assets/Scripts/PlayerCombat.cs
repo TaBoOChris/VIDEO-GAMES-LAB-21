@@ -10,7 +10,7 @@ public class PlayerCombat : MonoBehaviour
     public bool isAttacking = false;
     public bool isHeavyAttacking = false;
     public bool isFiring = false;
-    
+
     public Transform attackPoint;
 
     public Transform firePoint;
@@ -146,6 +146,7 @@ public class PlayerCombat : MonoBehaviour
 
 
     public void Shoot(){
+        animator.Play("Player_fire");
         Bullet bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation).GetComponent<Bullet>();
         bullet.parent = gameObject;
     }
