@@ -128,8 +128,10 @@ public class PlayerCombat : MonoBehaviour
 
     public void Stun(float duration){
 
+
         canAttack = false;          // avoid attack
         isHurt = true;              // run the animation
+        animator.Play("Player_Hurt");
         fightEffectManager.AddHurtEffect(gameObject);
         GetComponent<PlayerMovement>().Stun();  // disable movement
 

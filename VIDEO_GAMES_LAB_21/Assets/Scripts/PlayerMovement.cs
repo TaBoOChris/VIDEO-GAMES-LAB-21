@@ -43,9 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
             // Dust Effeck
             if(Mathf.Abs(move)>0){
-                Debug.Log("createDust");
                 createDust();
-                    
             }
 
         }
@@ -63,7 +61,17 @@ public class PlayerMovement : MonoBehaviour
     // receive input for move
     public void onMove(InputAction.CallbackContext context){
 
-        move = new Vector2(context.ReadValue<Vector2>().x , 0).normalized.x;
+        Vector2 input = context.ReadValue<Vector2>();
+
+        if(Mathf.Abs(input.x) > 0.6f){
+
+            move = input.normalized.x;
+
+        }else{
+            
+            move = 0;
+        }
+        
         
     }
 
