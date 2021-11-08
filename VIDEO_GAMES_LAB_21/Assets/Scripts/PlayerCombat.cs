@@ -8,6 +8,8 @@ public class PlayerCombat : MonoBehaviour
     public Animator animator;
     public float percentage = 0.0f;
     public bool isAttacking = false;
+    public bool isHeavyAttacking = false;
+    
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask stickLayers;
@@ -38,6 +40,21 @@ public class PlayerCombat : MonoBehaviour
         if(context.performed && !isAttacking) { 
                
             isAttacking = true; 
+
+            
+        }
+    }
+
+
+    public void HeavyAttackInput(InputAction.CallbackContext context){
+        
+        if(context.performed != true || !canAttack){
+            return;
+        }
+
+        if(context.performed && !isHeavyAttacking) { 
+               
+            isHeavyAttacking = true; 
 
             
         }
@@ -86,6 +103,24 @@ public class PlayerCombat : MonoBehaviour
                 }
 
                
+            }
+        } 
+    }
+
+
+    public void HeavyAttack(int i){
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position,attackRange,stickLayers);
+        foreach ( Collider2D enemy in hitEnemies){
+            if(enemy.gameObject != gameObject){
+
+                audioManager.Play("punch");
+                
+                float damageImpact = 300.0f;
+
+                enemy.GetComponent<PlayerCombat>().TakeDamage(damageImpact * i);
+                enemy.GetComponent<PlayerCombat>().Stun(0.5f);
+                fightEffectManager.AddImpactEffect();
+                enemy.GetComponent<PlayerCombat>().Propulse(attackPoint.position);              
             }
         } 
     }

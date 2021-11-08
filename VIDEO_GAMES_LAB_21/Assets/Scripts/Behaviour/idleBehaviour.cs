@@ -28,10 +28,15 @@ public class idleBehaviour : StateMachineBehaviour
             playerMovement.canMove = false;
             playerCombat.animator.Play("Player_Attack 1");
         }
-        if(playerCombat.isHurt){
+        else if(playerCombat.isHeavyAttacking){
+            playerMovement.canMove = false;
+            playerCombat.animator.Play("Player_Heavy_Attack 1");
+        }
+        else if(playerCombat.isHurt){
             
             playerCombat.animator.Play("Player_Hurt");
         }
+        
 
     }
 
