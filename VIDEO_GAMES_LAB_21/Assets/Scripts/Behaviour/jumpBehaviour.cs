@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class runBehaviour : StateMachineBehaviour
+public class jumpBehaviour : StateMachineBehaviour
 {
     PlayerMovement playerMovement;
     PlayerCombat playerCombat;
@@ -16,30 +16,24 @@ public class runBehaviour : StateMachineBehaviour
         playerCombat = animator.GetComponentInParent<PlayerCombat>();
 
 
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(playerCombat.isAttacking){
-            playerMovement.canMove = false;
-            playerCombat.animator.Play("Player_Attack 1");
-        }else if(playerCombat.isHeavyAttacking){
-            //playerMovement.canMove = false;
+        if(playerCombat.isHeavyAttacking){
+            
+            Debug.Log("jump kick");
             playerCombat.animator.Play("Player_Heavy_Attack 1");
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        if(playerCombat.isAttacking){
-            playerCombat.isAttacking = false;
-        }
-        else if(playerCombat.isHeavyAttacking){
-            playerCombat.isHeavyAttacking = false;
-        }
-    }
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    
+    //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
